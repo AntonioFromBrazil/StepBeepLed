@@ -22,7 +22,8 @@ CONSTRUCTOR:
 
 StepBeepLed name(pin1, pin2, pin3, pin4, pin_beep, pin_led); 
 name is any name for instance stepmotor
-uint8_t pin1,2,3,4,pin_beep,pin_led - reffers to ESP-32 pins connected to in1,2,3,4 of motor driver; pin_beep and pin_led
+uint8_t pin1,2,3,4 - reffers to ESP-32 pins connected to in1,2,3,4 of motor driver;
+uint8_t pin_beep,pin_led - reffers to ESP-32 pins connected to pin_beep and pin_led
 
 ------------------------------------------------------------------------------
 METHODS:
