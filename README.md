@@ -45,10 +45,11 @@
 		<p align="left">
 		</font><b><font face="Courier" size="5">CONSTRUCTOR:</font></b><font size="4" face="Courier"><br>
 		<br>
-		<b>NewStepper name(pin1, pin2, pin3, pin4);</b> <br>
+		<b>StepBeepLed name(pin1, pin2, pin3, pin4, pin_beep, pin_led);</b> <br>
 		name is any name for instance stepmotor<br>
 		uint8_t pin1,2,3,4 reffers to ESP-32 pins connected to in1,2,3,4 of 
-		motor driver</font></p><font size="4" face="Courier">
+		motor driver<br>
+                uint8_t pin_beep, pin_led reffers to ESP-32 pins connected to beep and led</font></p><font size="4" face="Courier">
         <hr align="left">
 		</font>
 		<p align="left">
@@ -159,7 +160,7 @@
 		<tr>
 		<td align="center">
 		<b><font size="4" face="Courier"><br>
-		typical beep and led schematic:<br>
+		typical beep and led schematics:<br>
 &nbsp;</font></b></td>
 	</tr>
 	<tr>
