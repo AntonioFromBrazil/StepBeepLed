@@ -10,7 +10,7 @@
 
 #include <StepBeepLed.h>
 
-StepBeepLed sm(16,17,18,19, 5,2);      //define constructor for driver motors pins in1,in2,in3,in4, pin beep, pin led
+StepBeepLed sm(16,17,18,19, 5,4);      //define constructor for driver motors pins in1,in2,in3,in4, pin beep, pin led
 
 void setup()
 {
