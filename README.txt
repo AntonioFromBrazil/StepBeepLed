@@ -57,9 +57,9 @@ name.where();
 return in an uint32_t value the number of steps remainding to the motor arrives to its destination
 if name.where()==0 means the motor is already in the last destination and is stopped at this moment
 
-name.setms(uint32_t ms);
-set the ms counter down (nonblock, to be used in substitution of delay function)
-As soon as initiated this ms counter is decremented each millisecond
+name.setms(ms);
+set the milliseconds counter down with the uint32_t ms value (nonblock, to be used in substitution of delay function)
+As soon as initiated this milliseconds counter is decremented each millisecond
 
 name.getms();
 return the ms counter at moment (initial ms value setted by previously name.setms)
