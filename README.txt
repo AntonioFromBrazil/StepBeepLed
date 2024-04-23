@@ -42,6 +42,28 @@ uint8_t vel is the speed (from 2 to ...) higher values lower speed
 boolean cw define direction of turn (true for right, clockwise; false for left, counterclockwise)
 IMPORTANT: the name.run can only be called if the name.where()==0  
 
+name.beep(bnum,bdur,bfreq,binter);
+int bnum is the quantity of beeps to be issued
+int bdur is the duration of each beep (in ms)
+int bfreq is the beep frequency (in Hz)
+int binter is the silence duration between each beep (in ms)
+
+name.led(lnum,ldur,linter);
+int lnum is the quantity of led blinking desired
+int ldur is the duration of led (in ms)
+int linter is the duration of led off (in ms)
+
+name.where();
+return in an uint32_t value the number of steps remainding to the motor arrives to its destination
+if name.where()==0 means the motor is already in the last destination and is stopped at this moment
+
+name.setms(uint32_t ms);
+set the ms counter down (nonblock, to be used in substitution of delay function)
+As soon as initiated this ms counter is decremented each millisecond
+
+name.getms();
+return the ms counter at moment (initial ms value setted by previously name.setms)
+
 ------------------------------------------------------------------------------
 STEP MOTOR VARIABLES:
 

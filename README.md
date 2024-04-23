@@ -55,7 +55,7 @@
 		<p align="left">
 		<font face="Courier" size="5"><b>METHODS:</b></font><font size="4" face="Courier"><br>
 		<br>
-		<b>name.begin(uint8_t mode);</b><br>
+		<b>name.begin(mode);</b><br>
 		at setup() section, to init the library timer and step motor model and 
 		mode of operation<br>
 		uint8_t mode should be:<br>
@@ -70,8 +70,33 @@
 		uint8_t vel is the speed (from 2 to ...) higher values lower speed<br>
 		boolean cw define direction of turn (true for right, clockwise; false 
 		for left, counterclockwise)<br>
-		IMPORTANT: the name.run can only be called if the name.where()==0 </font>
-        </p><font size="4" face="Courier">
+		IMPORTANT: the name.run can only be called if the name.where()==0<br>
+		<br>
+		<b>name.beep(bnum,bdur,bfreq,binter);</b><br>
+		int bnum is the quantity of beeps to be issued<br>
+		int bdur is the duration of each beep (in ms)<br>
+		int bfreq is the beep frequency (in Hz)<br>
+		int binter is the silence duration between each beep (in ms)<br>
+		<br>
+		<b>name.led(lnum,ldur,linter);</b><br>
+		int lnum is the quantity of led blinking desired<br>
+		int ldur is the duration of led (in ms)<br>
+		int linter is the duration of led off (in ms)<br>
+		<br>
+		<b>name.where();<br>
+		</b>return in an uint32_t value the number of steps remainding to the 
+		motor arrives to its destination<br>
+		if name.where()==0 means the motor is already in the last destination 
+		and is stopped at this moment</font></p>
+		<p align="left">
+		<font size="4" face="Courier"><b>name.setms(uint32_t ms);<br>
+		</b>set the ms counter down (nonblock, to be used in substitution of 
+		delay function)<br>
+		As soon as initiated this ms counter is decremented each millisecond<b><br>
+		<br>
+		name.getms();<br>
+		</b>return the ms counter at moment (initial ms value setted by 
+		previously name.setms)</font></p><font size="4" face="Courier">
         <hr align="left">
 		</font>
 		<p align="left">

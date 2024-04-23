@@ -10,6 +10,11 @@ class StepBeepLed {
   StepBeepLed(uint8_t pin4, uint8_t pin3, uint8_t pin2, uint8_t pin1, uint8_t pinB, uint8_t pinL);
   void begin(uint8_t model);
   void run(uint32_t steps, uint8_t vel, boolean cw);
+  void beep(int xbnum, int xbdur, int xbfreq, int xbinter);
+  void led(int xlnum, int xldur, int xlinter);
+  void setms(uint32_t yms);
+  uint32_t getms();
+  uint32_t where();
 
   int bdur=500, binter=500, bfreq=500;      //duration, interval and frequency of beeps (values can be changed by user)
   volatile int bnum=0;                      //quantity of beeps to be issued

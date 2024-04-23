@@ -48,6 +48,41 @@ void StepBeepLed::run(uint32_t steps, uint8_t vel, boolean cw)
 
 
 //----------------------------------------------------------------------
+uint32_t StepBeepLed::where()
+{
+  return xsteps;
+}
+
+
+//----------------------------------------------------------------------
+void StepBeepLed::beep(int xbnum, int xbdur, int xbfreq, int xbinter)
+{
+  bnum=xbnum; bdur=xbdur; bfreq=xbfreq; binter=xbinter;
+}
+
+
+//----------------------------------------------------------------------
+void StepBeepLed::led(int xlnum, int xldur, int xlinter)
+{
+  lnum=xlnum; ldur=xldur; linter=xlinter;
+}
+
+
+//----------------------------------------------------------------------
+void StepBeepLed::setms(uint32_t yms)
+{
+  xms=yms;
+}
+
+
+//----------------------------------------------------------------------
+uint32_t StepBeepLed::getms()
+{
+  return xms;
+}
+
+
+//----------------------------------------------------------------------
 void IRAM_ATTR StepBeepLed::onTimer1ms()
 {
   if (xms>0){xms--;}

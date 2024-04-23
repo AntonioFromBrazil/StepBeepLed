@@ -21,26 +21,26 @@ void setup()
 
 void loop()
 {
-  while (sm.xsteps>0){
+  while (sm.where()>0){
     //wait until step motor arrives to its last destination
     //during this wait time, the microcontroller is free to do anything
     }
     
-  sm.xms=500;while(sm.xms>0){
+  sm.setms(500); while(sm.getms()>0){
     //wait 500ms
     //setms/getms is the way to wait some amount of time without blocking
     //during this wait time, the microcontroller is free to do anything
     }
 
   sm.run(200, 8, true);                //start 200 steps forward (clockwise, right) 
-  while (sm.xsteps>0){}                //wait until step motor arrives to its last destination
-  sm.xms=500;while(sm.xms>0){}         //wait 500ms
+  while (sm.where()>0){}               //wait until step motor arrives to its last destination
+  sm.setms(500); while(sm.getms()>0){} //wait 500ms
   sm.run(200, 8, false);               //start 200 steps backward (counterclockwise, left)
    
-  sm.ldur=50;sm.linter=25;sm.lnum=100; //short blink led for 100 times
-  
+  sm.led(100, 50, 25);                 //short blink led for 100 times
+
   for (int i=0; i<3; i++){             //issue beeps  (3 sets of two different frequency)   
-    sm.bdur=1000; sm.bfreq=2000; sm.binter=0; sm.bnum=1; sm.xms=1000; delay(1); while(sm.xms>0){}
-    sm.bdur=1000; sm.bfreq=1600; sm.binter=0; sm.bnum=1; sm.xms=1000; delay(1); while(sm.xms>0){}
-  }  
+    sm.beep(1, 1000, 2000, 0); sm.setms(1000); while(sm.getms()>0){}
+    sm.beep(1, 1000, 1600, 0); sm.setms(1000); while(sm.getms()>0){}
+  } 
 }
