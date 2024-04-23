@@ -89,10 +89,10 @@
 		if name.where()==0 means the motor is already in the last destination 
 		and is stopped at this moment</font></p>
 		<p align="left">
-		<font size="4" face="Courier"><b>name.setms(uint32_t ms);<br>
-		</b>set the ms counter down (nonblock, to be used in substitution of 
+		<font size="4" face="Courier"><b>name.setms(ms);<br>
+		</b>set the milliseconds counter down with the uint32_t ms value (nonblock, to be used in substitution of 
 		delay function)<br>
-		As soon as initiated this ms counter is decremented each millisecond<b><br>
+		As soon as initiated this milliseconds counter is decremented each millisecond<b><br>
 		<br>
 		name.getms();<br>
 		</b>return the ms counter at moment (initial ms value setted by 
